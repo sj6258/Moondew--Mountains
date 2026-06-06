@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://uwknlvsu68np"
+path="res://.godot/imported/40 - Crypt.ogg-ea28c2fb91675c38c61a893fea889e22.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Ninja Adventure - Asset Pack/Audio/Musics/40 - Crypt.ogg"
+dest_files=["res://.godot/imported/40 - Crypt.ogg-ea28c2fb91675c38c61a893fea889e22.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

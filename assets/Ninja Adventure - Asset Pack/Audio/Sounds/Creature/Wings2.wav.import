@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b02r8tbqh55sa"
+path="res://.godot/imported/Wings2.wav-87184a02888dc715a49dcc9cbf0b3178.sample"
+
+[deps]
+
+source_file="res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Creature/Wings2.wav"
+dest_files=["res://.godot/imported/Wings2.wav-87184a02888dc715a49dcc9cbf0b3178.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
