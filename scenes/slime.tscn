@@ -1,6 +1,8 @@
-[gd_scene load_steps=24 format=3 uid="uid://do3khma1uhuep"]
+[gd_scene load_steps=27 format=3 uid="uid://do3khma1uhuep"]
 
 [ext_resource type="Texture2D" uid="uid://dec4slhs78nph" path="res://assets/Cute_Fantasy_Free/Enemies/Slime_Green.png" id="1_371uh"]
+[ext_resource type="Script" uid="uid://bgnfbetdmbwl6" path="res://scenes/slime.gd" id="1_p2gj0"]
+[ext_resource type="AudioStream" uid="uid://chso8do13vn1" path="res://assets/Ninja Adventure - Asset Pack/Audio/Sounds/Hit & Impact/Hit8.wav" id="3_n6pvg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p2gj0"]
 atlas = ExtResource("1_371uh")
@@ -163,12 +165,31 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_371uh"]
 size = Vector2(36, 34)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_371uh"]
+radius = 150.0
+
 [node name="slime" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_p2gj0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_24adn")
-animation = &"idle"
+animation = &"die"
+frame_progress = 0.5782531
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_371uh")
+
+[node name="Slight" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Slight"]
+shape = SubResource("CircleShape2D_371uh")
+
+[node name="TakeDamage" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_n6pvg")
+pitch_scale = 5.0
+
+[connection signal="body_entered" from="Slight" to="." method="_on_slight_body_entered"]
+[connection signal="body_exited" from="Slight" to="." method="_on_slight_body_exited"]

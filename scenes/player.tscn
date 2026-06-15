@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://csijbsr8e7o28"]
+[gd_scene load_steps=59 format=3 uid="uid://csijbsr8e7o28"]
 
 [ext_resource type="Texture2D" uid="uid://bbmaucg4ihsr" path="res://assets/Cute_Fantasy_Free/Player/Player.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://cyap3px2l001" path="res://scenes/player.gd" id="1_g2els"]
@@ -421,6 +421,9 @@ animations = [{
 "speed": 7.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dqkch"]
+size = Vector2(10, 5.25)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qhqgy"]
 size = Vector2(15, 15)
 
@@ -433,6 +436,11 @@ texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_ha2mi")
 animation = &"attack_right"
 autoplay = "idle_down"
+frame = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4.625)
+shape = SubResource("RectangleShape2D_dqkch")
 
 [node name="SwingSword" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_qhqgy")
@@ -440,6 +448,7 @@ pitch_scale = 3.0
 
 [node name="Hitbox" type="Area2D" parent="."]
 position = Vector2(7.5, -0.5)
+collision_mask = 2
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
